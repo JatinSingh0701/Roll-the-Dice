@@ -1,0 +1,53 @@
+// 1st code
+
+1-6
+let randomNumber = Math.floor(Math.random() * 6) + 1;
+
+//dicel.png -- 
+
+let randomDiceImg = "dice" + randomNumber + ".png";
+
+let randomImgsrc = "images/" + randomDiceImg
+
+
+document.querySelectorAll("img")[0];
+
+image1.setattribute("src",randomImgsrc);
+
+// 2nd code
+
+let randomDiceImg = `dice${randomNumber}.png`;
+let randomImgsrc = `images/${randomDiceImg}`;
+
+let image1 = document.querySelectorAll("img")[0];
+image1.setAttribute("src", randomImgsrc);
+
+let randomNumber1 = Math.floor(Math.random() * 6) + 1;
+let randomDiceImg1 = `dice${randomNumber1}.png`;
+let randomImgsrc1 = `images/${randomDiceImg1}`;
+let image2 = document.querySelectorAll("img")[1];
+image2.setAttribute("src",randomImgsrc1);
+
+
+// 3rd code
+function setRandomImage(imageElement) {
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    let randomDiceImg = `dice${randomNumber}.png`;
+    let randomImgsrc = `images/${randomDiceImg}`;
+    imageElement.setAttribute("src", randomImgsrc);
+    return randomNumber; // Return the generated number
+}
+
+let image1 = document.querySelectorAll("img")[0];
+let randomNumber1 = setRandomImage(image1); // Store the generated number
+
+let image2 = document.querySelectorAll("img")[1];
+let randomNumber2 = setRandomImage(image2); // Store the generated number
+
+if (randomNumber1 > randomNumber2) {
+   document.querySelector("h1").innerHTML ="Player 1 Win";
+} else if (randomNumber1 < randomNumber2) {
+    document.querySelector("h1").innerHTML ="Player 2 Win";
+} else {
+    document.querySelector("h1").innerHTML ="It's a tie!";
+}
